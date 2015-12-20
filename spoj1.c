@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<math.h>
+main()
+{
+	int test,n,m,k,flag=0,i,j;
+	scanf("%d",&test);
+	if(test>10)
+	return;
+	while(test>0)
+	{
+		scanf("%d%d",&n,&m);
+		if(n==2)
+		printf("%d",n);
+		for(i=n;i<=m;i++)
+		{
+			k=sqrt(i);
+			for(j=2;j<k;j++)
+			{
+				if(i%j==0)
+				{
+					flag=1;
+					break;
+				}
+			}
+			if(flag==1){
+			flag=0;
+			continue;
+			}
+			else{
+			printf("%d\n",i);
+			}
+		}
+		test--;
+		printf("\n");
+	}
+}
